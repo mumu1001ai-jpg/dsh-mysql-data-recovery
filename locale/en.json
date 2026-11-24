@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "mysql数据恢复",
+    "description": "Read MySQL binlog and generate rollback SQL by time window or target SQL; includes table/DML filters, scan progress, SQL preview, temp-user SQL, and open-folder actions. Rollback SQL is never executed.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "dsh-mysql-data-recovery",
+  "version": "1.5.0",
+  "type": "module",
+  "description": "mysql数据恢复: a DeepSeek Harness (DSH) plugin that reads MySQL binlog and generates rollback SQL for table-level or SQL-level recovery without executing it.",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "plugin",
+    "mysql",
+    "binlog",
+    "rollback",
+    "recovery",
+    "mysql数据恢复"
+  ],
+  "author": "mumu1001ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mumu1001ai-jpg/dsh-mysql-data-recovery.git"
+  },
+  "homepage": "https://github.com/mumu1001ai-jpg/dsh-mysql-data-recovery#readme",
+  "bugs": {
+    "url": "https://github.com/mumu1001ai-jpg/dsh-mysql-data-recovery/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "mysqlrecover_helper.py",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "icon.svg"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check client.js",
+    "pack:check": "npm pack --dry-run"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-api-session-controller"
+      ]
+    }
+  }
+}

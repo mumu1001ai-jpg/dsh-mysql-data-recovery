@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "mysql数据恢复",
+    "description": "读取 MySQL binlog，按时间窗口或执行过的 SQL 生成回滚 SQL 文件；提供表级/DELETE 类型过滤、扫描进度、SQL 预览、临时恢复账号 SQL，以及打开 SQL 所在目录。不会自动执行回滚 SQL。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}
